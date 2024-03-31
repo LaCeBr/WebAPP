@@ -1,5 +1,4 @@
 .footer {
-    position: fixed;
     bottom: 0;
     width: 100%; /* Asegúrate de que el pie de página ocupe todo el ancho de la pantalla */
     padding: 0.5rem;
