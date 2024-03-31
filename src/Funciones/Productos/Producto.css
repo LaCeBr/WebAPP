@@ -43,9 +43,26 @@
     border-radius: 12px;
 }
   
+.producto__cantidad {
+    font-size: 1rem;
+    color: rgb(0, 0, 0);
+    background-color: #e8e8e8;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.producto Button{
+    font-size: 1rem;
+    color: rgb(0, 0, 0);
+    background-color: #ffffff;
+    border: 1px solid rgb(14, 14, 14);
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+  
 @media (min-width: 580px) {
     .producto__descripcion {
-      flex-direction: row;
+      flex-direction: column;
       align-items:center;
       justify-content: flex-start;
       flex: 1;
