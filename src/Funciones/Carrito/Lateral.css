@@ -1,0 +1,15 @@
+.side-cart {
+    position: fixed;
+    top: 0;
+    right: -300px; /* Inicialmente fuera de la pantalla */
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease; /* Animación de desplazamiento */
+    z-index: 1000; /* Asegura que esté encima de otros elementos */
+}
+  
+.side-cart.open {
+    right: 0; /* Muestra el carrito */
+}

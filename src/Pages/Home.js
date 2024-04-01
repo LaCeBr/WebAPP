@@ -1,4 +1,5 @@
 import Listado from '../Funciones/Productos/Listado'
+
 const Home = () => {
     return (
         <>
