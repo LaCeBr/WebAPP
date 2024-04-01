@@ -1,38 +1,30 @@
-.App {
-  text-align: center;
+.side-cart {
+  position: absolute;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100%;
+  background-color: white;
+  transition: right 0.3s ease;
+  z-index: 1000;
+  padding: auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.side-cart.open {
+  right: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.toggle-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Ajustar el contenido principal cuando el carrito está abierto */
+.main-content {
+  transition: margin-right 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.side-cart.open + .main-content {
+  margin-right: 300px; /* Ajusta el margen a la derecha del contenido principal para dejar espacio al carrito */
 }

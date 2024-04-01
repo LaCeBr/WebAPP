@@ -13,12 +13,14 @@ function App() {
   return(
     <CartProvider>
       <Header />
+      <div style={{ position: 'relative'}}>
+        <Lateral />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/pedidos' element={<Pedidos />} />
           <Route path='*' element={<ErrorPage />} />
         </Routes>
-        <Lateral />
+      </div>
       <Footer />
     </CartProvider>
   );

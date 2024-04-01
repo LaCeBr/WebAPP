@@ -10,3 +10,19 @@
 .nav-link {
     color: white; /* Cambiar el color del texto si lo deseas */
 }
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.header-content h1 {
+    margin: 0; /* Elimina el margen predeterminado del h1 */
+}
+
+.header-content Button {
+    margin-left: auto; /* Mueve el botón hacia la derecha */
+    background-color: #860000;
+    border: 0;
+}
