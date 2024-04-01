@@ -7,10 +7,10 @@ function Item({ item }) {
     
     return (
       <div className="cart-item">
-        <img src={item.image} alt={item.name} />
+        <img src={item.imagen} alt={item.name} />
         <div>
-            <h3>{item.name}</h3>
-            <p>${item.price}</p>
+            <h3>{item.nombre}</h3>
+            <p>${item.precio}</p>
             <Button onClick={() => removeFromCart(item)}>Eliminar</Button>
         </div>
       </div>

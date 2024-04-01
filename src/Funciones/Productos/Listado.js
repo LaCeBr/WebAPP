@@ -5,16 +5,12 @@ import axios from 'axios';
 
 function Listado(props) {
 
-    const [ano, setAno] = useState('');
-
     const [productosFirebase, setProductosFirebase] = useState([]);
 
     useEffect(() => {
-        console.log('PRODUCTOS MONTADO');
         //Firebase
         axios.get('https://web-app-dsm-react-default-rtdb.europe-west1.firebasedatabase.app/productos.json')
         .then((response) => {
-            console.log(response.data);
             let arrayProductos = [];
             for(let key in response.data) {
                 arrayProductos.push({
@@ -36,7 +32,7 @@ function Listado(props) {
         <div>
             {productosFirebase.map((elemento) => {
                 return (
-                    <Producto key={elemento.id} producto={elemento} borraProducto={props.borraProducto} />
+                    <Producto key={elemento.id} producto={elemento} />
                 )
             })}
         </div>

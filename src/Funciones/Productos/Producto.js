@@ -1,19 +1,32 @@
 import './Producto.css';
 import Button from 'react-bootstrap/Button';
+import { useCart } from '../Carrito/Contexto';
 
 function Producto(props) {
+    const { getFromCart, addToCart, subtractFromCart } = useCart();
 
-    const clickHandler = () => {
-        //nombre = 'Nuevo nombre';
-        //setNombre('¡¡CAMBIADO!!');
-        console.log(nombre);
-    }
+    const addItem = () => {
+        console.log('añadiendo');
+        let item = {
+            nombre: nombre,
+            precio: precio,
+            cantidad: 1,
+            imagen: imagen
+        };
+
+        addToCart(item);
+    };
+
+    const subtractItem = () => {
+        console.log('quitando');
+        subtractFromCart(nombre); // Llama a removeFromCart con el objeto item como argumento
+    };
 
     const nombre = props.producto.nombre;
     const stock = props.producto.stock;
     const precio = props.producto.precio;
     const imagen = props.producto.imagen;
-    const cantidad = 100;
+    let cantidad = getFromCart(nombre)*100;
     return (
         <div className='producto'>
             <img className='producto__imagen' alt={nombre} src={imagen}/>
@@ -22,9 +35,9 @@ function Producto(props) {
                 <div>Actualmente disponibles: {stock}Kg</div>
             </div>
             
-            <Button variant='danger'>+</Button>
+            <Button variant='danger' onClick={addItem}>+</Button>
             <p className='producto__cantidad'>{cantidad}g</p>
-            <Button variant='danger'>-</Button>
+            <Button variant='danger' onClick={subtractItem}>-</Button>
         </div>
     )
 }
