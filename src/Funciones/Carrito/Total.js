@@ -15,11 +15,11 @@ function Total() {
     if (cart.length > 0){
         let suma = 0;
         cart.forEach((item) => (
-            suma += (item.cantidad / 10) * item.precio
+            suma += item.cantidad * item.precio
         ));
         return(
             <div style={{paddingLeft:'1rem'}}>
-                <h3>Total del pedido: {suma}€</h3>
+                <h3>Total del pedido: {suma / 10}€</h3>
                 <Button onClick={realizaPedido}>Realizar Pedido</Button>
             </div>
         );
