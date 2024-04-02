@@ -10,7 +10,7 @@ function Lateral() {
     <div className={`side-cart ${isCartOpen ? 'open' : ''}`}>
       <h2 style={{paddingLeft:'1rem'}}>Carrito de Compras</h2>
       {cart.map((item) => (
-        <Item key={item.id} item={item} />
+        <Item key={item.nombre} item={item} />
       ))}
       <Total />
     </div>

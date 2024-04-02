@@ -1,19 +1,27 @@
 import React from 'react';
 import { useCart } from './Contexto'; 
 import Button from 'react-bootstrap/Button';
+import { useNavigate } from 'react-router';
 
 function Total() {
-    const { cart } = useCart();
+    const { cart, toggleCart } = useCart();
+    const navigate = useNavigate();
+    
+    const realizaPedido = () => {
+        toggleCart();
+        navigate('/confirmacion');
+    };
+    
     if (cart.length > 0){
         let suma = 0;
         cart.forEach((item) => (
             suma += (item.cantidad / 10) * item.precio
         ));
         return(
-            <>
-            <h3>Total del pedido: {suma}</h3>
-            <Button >Realizar Pedido</Button>
-            </>
+            <div style={{paddingLeft:'1rem'}}>
+                <h3>Total del pedido: {suma}€</h3>
+                <Button onClick={realizaPedido}>Realizar Pedido</Button>
+            </div>
         );
     }else{
         return(
