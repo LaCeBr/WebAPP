@@ -7,7 +7,6 @@ import Pedidos from './Pages/Pedidos';
 import ErrorPage from './Pages/ErrorPage';
 import { CartProvider } from './Funciones/Carrito/Contexto';
 import Lateral from './Funciones/Carrito/Lateral';
-import Button from 'react-bootstrap/Button';
 
 function App() {
   return(

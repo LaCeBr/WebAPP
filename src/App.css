@@ -28,3 +28,17 @@
 .side-cart.open + .main-content {
   margin-right: 300px; /* Ajusta el margen a la derecha del contenido principal para dejar espacio al carrito */
 }
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px; 
+  border: 1px;
+  align-items: center; 
+}
+
+.cart-item Button{
+  margin-left: auto; /* Mueve el botón hacia la derecha */
+  background-color: #ffffff;
+  border: 0;
+}
