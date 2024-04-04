@@ -6,6 +6,7 @@ import Home from './Pages/Home';
 import Pedidos from './Pages/Pedidos';
 import ErrorPage from './Pages/ErrorPage';
 import Confirmacion from './Pages/Confirmacion';
+import Formulario from './Pages/Formulario';
 import { CartProvider } from './Funciones/Carrito/Contexto';
 import Lateral from './Funciones/Carrito/Lateral';
 
@@ -20,6 +21,7 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/pedidos' element={<Pedidos />} />
             <Route path='/confirmacion' element={<Confirmacion />} />
+            <Route path='/formulario' element={<Formulario />} />
             <Route path='*' element={<ErrorPage />} />
           </Routes>
         </div>

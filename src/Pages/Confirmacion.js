@@ -13,7 +13,7 @@ function Confirmacion() {
     };
 
     const Continua = () => {
-        return(<div>bien</div>)
+        navigate('/formulario');
     }
     
     if (cart.length > 0){
