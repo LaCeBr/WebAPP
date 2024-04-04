@@ -6,7 +6,6 @@ function Producto(props) {
     const { getFromCart, addToCart, subtractFromCart } = useCart();
 
     const addItem = () => {
-        console.log('añadiendo');
         let item = {
             nombre: nombre,
             precio: precio,
@@ -18,8 +17,7 @@ function Producto(props) {
     };
 
     const subtractItem = () => {
-        console.log('quitando');
-        subtractFromCart(nombre); // Llama a removeFromCart con el objeto item como argumento
+        subtractFromCart(nombre);
     };
 
     const nombre = props.producto.nombre;

@@ -63,8 +63,21 @@ export function CartProvider({ children }) {
     setIsCartOpen(!isCartOpen);
   };
 
+  const extractProductList = () => {
+    // Devuelve una copia de los elementos en el carrito
+    const productList = cart.map(item => {
+      // Modifica los campos cantidad y precio de cada elemento
+      return {
+        ...item,
+        cantidad: item.cantidad/10, // Cambia aquí la cantidad según tu necesidad
+        precio: item.precio*item.cantidad/10 // Cambia aquí el precio según tu necesidad
+      };
+    });
+    return (productList);
+  };
+
   return (
-    <CartContext.Provider value={{ cart, addToCart, subtractFromCart, removeFromCart, getFromCart, isCartOpen, toggleCart }}>
+    <CartContext.Provider value={{ cart, addToCart, subtractFromCart, removeFromCart, getFromCart, isCartOpen, toggleCart, extractProductList }}>
       {children}
     </CartContext.Provider>
   );

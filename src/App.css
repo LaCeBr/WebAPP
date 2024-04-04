@@ -61,7 +61,6 @@
   padding-left: 5rem;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
 }
 
 .formulario label {
@@ -69,7 +68,8 @@
   justify-content: space-between;
   width: 100%;
   max-width: 80%;
-  margin-bottom: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 
@@ -79,4 +79,10 @@
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
+}
+
+.error{
+  align-self:center;
+  color: red;
+  padding: 0px;
 }
