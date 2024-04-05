@@ -82,12 +82,10 @@ const Formulario = () => {
     //Posteamos en base de datos
     axios.post('https://web-app-dsm-react-default-rtdb.europe-west1.firebasedatabase.app/pedidos.json', orden)
       .then((response) => {
-        console.log(response);
-        alert(`Su pedido es: ${claveOrden}`);
+        navigate(`/fin?clave=${claveOrden}`);
       })
       .catch((error) => {
-        alert('error');
-        console.log(error);
+        alert('Lamentablemente, ha habido un error a la hora de enviar el pedido. Por favor, intentelo de nuevo en unos instantes.');
       }
     );
 
