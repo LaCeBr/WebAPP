@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import Producto from './Producto';
-import { Alert } from 'react-bootstrap';
 import axios from 'axios';
 
 function Listado(props) {

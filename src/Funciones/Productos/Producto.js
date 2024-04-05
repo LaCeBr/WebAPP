@@ -1,4 +1,3 @@
-import './Producto.css';
 import Button from 'react-bootstrap/Button';
 import { useCart } from '../Carrito/Contexto';
 
