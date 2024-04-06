@@ -29,7 +29,7 @@ function Detalle(props){
         </Modal.Body>
         <Modal.Footer style={{display:'flex', justifyContent:'center', gap:'10px'}}>
             <Button onClick={props.ocultarDetalle}>Cerrar</Button>
-            <Button onClick={props.borrarPedido}>Eliminar Pedido</Button>
+            <Button onClick={props.pideBorrar}>Eliminar Pedido</Button>
         </Modal.Footer>
     </Modal>
   );

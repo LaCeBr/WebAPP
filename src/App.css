@@ -195,3 +195,16 @@
   padding: 0.5rem;
   padding-left: 2rem;
 }
+
+.modalConfirm {
+  position: absolute; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);  
+  background:whitesmoke; 
+  width: 450px; 
+  height: 100px;
+  border-radius: 15px;
+  border: 2px solid rgb(14, 14, 14);
+  padding: 0.5rem;
+}
