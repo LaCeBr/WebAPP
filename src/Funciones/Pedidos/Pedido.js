@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import Detalle from './Detalle';
-import { Modal, Button } from 'react-bootstrap';
+import axios from 'axios';
 
 function Producto(props) {
     const [detalleEstado, setDetalle] = useState(false); 
 
+    const clave = props.pedido.clave;
     const id = props.pedido.id;
     const usuario = props.pedido.usuario;
     const productos = props.pedido.productos;
@@ -21,7 +22,15 @@ function Producto(props) {
     };
 
     const borrarPedido = () => {
-        console.log('borra');
+        setDetalle(false);
+        axios.delete('https://web-app-dsm-react-default-rtdb.europe-west1.firebasedatabase.app/pedidos/'+ clave+ '.json')
+        .then((response) => {
+            alert('El pedido '+id+' ha sido eliminado')
+        })
+        .catch((error) => {
+            setDetalle(true);
+            alert('Debido a problemas de conexión, no ha sido posible eliminar el pedido. Inténtelo de nuevo más tarde');
+        })
     };
 
     return (

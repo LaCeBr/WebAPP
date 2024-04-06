@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Pedido from './Pedido';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 function Listado(props) {
 
@@ -13,6 +14,7 @@ function Listado(props) {
             let arrayPedidos = [];
             for (let key in response.data) {
                 const nuevoPedido = {
+                    clave : key,
                     id: response.data[key].id_pedido,
                     usuario: response.data[key].usuario,
                     productos: response.data[key].pedido
@@ -35,15 +37,19 @@ function Listado(props) {
         })
     }, []);
 
-    return (
-        <div>
-            {pedidosFirebase.map((elemento) => {
-                return (
-                    <Pedido key={elemento.id} pedido={elemento} />
-                )
-            })}
-        </div>
-    );
+    if (pedidosFirebase.length>0){
+        return (
+            <div>
+                {pedidosFirebase.map((elemento) => {
+                    return (
+                        <Pedido key={elemento.id} pedido={elemento} />
+                    )
+                })}
+            </div>
+        );
+    }else{
+        return(<p>¡Sé el primero en <Link to='/'>realizar un pedido</Link> con nosotros!</p>)
+    }
 }
 
 export default Listado;
