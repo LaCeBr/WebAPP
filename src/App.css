@@ -181,3 +181,17 @@
   margin: 0 1rem;
   color: rgb(88, 64, 55);
 }
+
+.modalDetalle {
+  position: absolute; 
+  top: 60%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);  
+  background:whitesmoke; 
+  width: 90%; 
+  height: 90%;
+  border-radius: 15px;
+  border: 2px solid rgb(14, 14, 14);
+  padding: 0.5rem;
+  padding-left: 2rem;
+}

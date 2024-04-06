@@ -3,6 +3,7 @@ import { useCart } from '../Funciones/Carrito/Contexto';
 import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
+import ListaDetalle from '../Funciones/Pedidos/listaDetalle';
 
 function Confirmacion() {
     const {cart} = useCart();
@@ -25,13 +26,7 @@ function Confirmacion() {
             <div className="main-content">
                 <h1 style={{justifyContent:'center', display:'flex'}}>Su Pedido</h1>
                 {cart.map((item, index) => (
-                    <div key={index} style={{display:'flex', justifyContent:'center'}}>
-                        <img src={item.imagen} style={{width:'50px', height:'50px'}} />
-                        <h4 style={{textSizeAdjust:'auto', paddingLeft:'3rem'}}>{item.cantidad*100}g</h4>
-                        <p style={{textSizeAdjust:'auto', paddingLeft:'3rem', paddingTop:'0.5rem'}}> {item.nombre}({item.precio}€/Kg)</p>
-                        <h4 style={{textSizeAdjust:'auto', paddingLeft:'3rem'}}>{item.cantidad*item.precio/10}€</h4>
-
-                    </div>
+                    <ListaDetalle key={index} item={item}/>
                 ))}
                 <h2 style={{ paddingLeft:'20rem', display:'flex', justifyContent:'center'}}>Total: {suma / 10}€</h2>
                 <p style={{display:'flex', justifyContent:'center'}}>Confirme que este es su pedido deseado</p>
