@@ -69,8 +69,7 @@ export function CartProvider({ children }) {
       // Modifica los campos cantidad y precio de cada elemento
       return {
         ...item,
-        cantidad: item.cantidad/10, // Cambia aquí la cantidad según tu necesidad
-        precio: item.precio*item.cantidad/10 // Cambia aquí el precio según tu necesidad
+        cantidad: item.cantidad/10
       };
     });
     return (productList);

@@ -194,6 +194,7 @@
   border: 2px solid rgb(14, 14, 14);
   padding: 0.5rem;
   padding-left: 2rem;
+  overflow-y: auto;
 }
 
 .modalConfirm {

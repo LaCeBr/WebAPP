@@ -13,7 +13,7 @@ function Producto(props) {
     const productos = props.pedido.productos;
 
     const totalVariedades = productos.length;
-    const totalPrice = productos.reduce((total, item) => total + item.precio, 0);
+    const totalPrice = productos.reduce((total, item) => total + item.precio * item.cantidad, 0);
 
     const mostrarDetalle = () => {
         setDetalle(true);

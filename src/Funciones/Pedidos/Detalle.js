@@ -25,7 +25,7 @@ function Detalle(props){
             {productos.map((item, index) => (
                 <ListaDetalle key={index} item={item}/>
             ))}
-            <h4>Total: {suma / 10}€</h4>
+            <h4>Total: {suma}€</h4>
         </Modal.Body>
         <Modal.Footer style={{display:'flex', justifyContent:'center', gap:'10px'}}>
             <Button onClick={props.ocultarDetalle}>Cerrar</Button>
